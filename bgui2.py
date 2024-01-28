@@ -59,13 +59,13 @@ class ProgramLauncherApp(ctk.CTk):
         self.bot_profile_label.pack(pady=5)
 
         # Replace "YOUR_BOT_TOKEN" with a valid Discord bot token
-        bot_token = "MTIwMDQwNzY5OTc3MTM1OTMyMg.GL7Wde.AbamQ9rKynHFOz7hYodDPl1J0SNBoJk34YRpK4"
+        config_file_path = "config.txt"
+        bot_token = self.read_token_from_config(config_file_path)
 
         headers = {
             "Authorization": f"Bot {bot_token}"
         }
 
-        config_file_path = "config.txt"
         user_id = self.read_user_id_from_config(config_file_path)
         response = requests.get(f"https://discord.com/api/v9/users/{user_id}", headers=headers)
         if response.status_code == 200:
