@@ -1,0 +1,4 @@
+# put your bot token here
+token = tokengoeshere
+# put your bots user ID here
+userid = useridgoeshere
